@@ -1,4 +1,7 @@
-<h1>Vehicle Management System</h1>
-<p>Welcome <?= htmlspecialchars($_SESSION['username']) ?></p>
-<p>Role: <?= htmlspecialchars($_SESSION['role']) ?></p>
-<a href="<?= \Config\App::url('/logout') ?>">Logout</a>ß
+<div class="card">
+    <div class="card-body">
+        <h2>Welcome <?=htmlspecialchars($_SESSION['username'])?></h2>
+        <p>Role:<span class="badge bg-primary"><?=htmlspecialchars($_SESSION['role'])?></span></p>
+        <a class="btn btn-primary" href="<?=\Config\App::url('/vehicles')?>">Manage Vehicles</a>
+    </div>
+</div>

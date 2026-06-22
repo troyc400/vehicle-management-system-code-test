@@ -1,10 +1,13 @@
 <?php
 namespace Core;
 
-abstract class Controller {
-    protected function view( string $view, array $data = []): void {
+class Controller {
+    public function view(string $view, array $data = []): void {
         extract($data);
-        require dirname(__DIR__) . "/app/Views/{$view}.php";
+        ob_start();
+        require dirname(__DIR__) . "/app/Views/$view.php";
+        $content = ob_get_clean();
+        require dirname(__DIR__) . "/app/Views/layouts/main.php";
     }
 }
 ?>
