@@ -1,4 +1,6 @@
 <?php
-require_once dirname(__DIR__) . '/core/bootstrap.php';
-echo "Vehicle Management System";
+
+require_once dirname(__DIR__).'/core/bootstrap.php';
+require_once dirname(__DIR__).'/app/routes.php';
+
 ?>

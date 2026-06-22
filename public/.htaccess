@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteBase /vehicle-management-system-code-test/public/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^ index.php [QSA,L]
