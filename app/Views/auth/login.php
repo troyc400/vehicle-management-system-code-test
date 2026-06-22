@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>Login</title>
-    </head>
+<h1>Vehicle Management Login</h1>
+<?php if(isset($_SESSION['error'])): ?>
+<p><?= $_SESSION['error']; ?></p>
+<?php unset($_SESSION['error']); ?>
+<?php endif; ?>
 
-    <body>
-        <h2>Vehicle Management Login</h2>
-        <form method="POST" action="/login">
-            <input name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button>Login</button>
-        </form>
-    </body>
-</html>
+<form method="POST" action="<?= \Config\App::url('/login') ?>">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">
+        Login
+    </button>
+</form>
